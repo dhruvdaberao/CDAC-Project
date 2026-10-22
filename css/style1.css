@@ -1,0 +1,689 @@
+/* Global Typography Scaling */
+body {
+  font-size: clamp(14px, 2vw, 16px);
+  line-height: 1.6;
+  overflow-x: hidden;
+
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 600;
+}
+
+h3 {
+  font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+  font-weight: 600;
+}
+
+h4 {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+}
+
+h5 {
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+}
+
+p {
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+  line-height: 1.6;
+  word-break: break-word;
+}
+.text-responsive {
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+}
+
+.container {
+  max-width: 100%;
+  padding: 0 15px;
+}
+/* Base Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  background-color: #1f1f2e;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  color: #fcb045 !important;
+}
+
+.nav-link {
+  color: #ffffff !important;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #fcb045 !important;
+}
+
+/* Hero Section (Main Landing Page) */
+.hero.home-hero,
+.hero-home {
+   background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
+    url('../assets1/images/sci-hero.jpg') no-repeat center center / cover;
+  min-height: 90vh;
+  color: white !important;
+  padding: 100px 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  word-break: break-word;
+  background-size: cover;
+  background-position: center;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.sci-home-hero,
+.hero-home {
+   background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
+    url('../assets1/images/banner-img.png') no-repeat center center / cover;
+  min-height: 90vh;
+  color: white !important;
+  padding: 100px 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  word-break: break-word;
+  background-size: cover;
+  background-position: center;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+h2 {
+  white-space: nowrap;
+}
+.home-hero {
+  padding: 60px 20px;
+  background-color: #000; /* or your preferred background */
+  color: #fff;
+}
+
+
+.hero-home h1,
+.hero-home h2,
+.hero-home h5,
+.hero-home p,
+.hero-home a {
+  color: white !important;
+}
+
+
+.hero-home h1,
+.hero-home h5 {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Call for Papers Hero */
+.hero.call-for-paper-hero {
+  background-color: #1f1f2e;
+  height: 40vh;
+  padding: 40px 0;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.hero p {
+  font-size: 1.4rem;
+  max-width: 800px;
+}
+
+/* for conference heading Supercomputing India */
+.custom-title {
+  font-style: italic; /* optional: italic, normal, oblique */
+  letter-spacing: 1px; /* optional: spacing between letters */
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 7vw, 5rem); /* Mobile to desktop scaling */
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  word-break: break-word;
+}
+.custom-h2 {
+  font-style: italic; /* optional: italic, normal, oblique */
+  letter-spacing: 1px; /* optional: spacing between letters */
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 7vw, 5rem); /* Mobile to desktop scaling */
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  word-break: break-word;
+}
+
+/* Button */
+.btn-custom {
+  background-color: #fcb045;
+  border: none;
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 50px;
+  color: #fff;
+  transition: background 0.3s;
+}
+
+.btn-custom:hover {
+  background-color: #ff9300;
+}
+
+/* Section Titles */
+section {
+  padding: 60px 0;
+}
+
+h2 {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+  background-color: #1f1f2e;
+  color: #fff;
+  padding: 20px 0;
+}
+
+/* Mega Menu */
+.mega-menu {
+  width: 600px;
+  background-color: #000;
+  border: none;
+}
+
+.dropdown-menu.mega-menu {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 650px;
+  max-width: 95vw;
+  border-radius: 8px;
+  background-color: #000;
+  border: none;
+  padding: 20px;
+}
+
+.mega-menu .dropdown-item {
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: 400;
+}
+
+.mega-menu .dropdown-item:hover {
+  background-color: #333;
+}
+
+@media (max-width: 991px) {
+  .dropdown-menu.mega-menu {
+    position: static !important;
+    transform: none !important;
+    width: 100% !important;
+    border-radius: 0;
+    background-color: #1f1f2e;
+    padding: 1rem;
+    display: block !important;
+  }
+
+  .dropdown-menu.mega-menu .row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .dropdown-menu.mega-menu .col-md-4 {
+    width: 100%;
+  }
+
+  .dropdown-menu .dropdown-item {
+    color: white;
+    padding: 0.5rem 1rem;
+  }
+}
+.text-purple {
+  color: #b278f1;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.sponsor-bar {
+  background-color: #fff;
+  padding: 30px 0;
+  overflow: hidden;
+}
+
+.sponsor-bar .sponsor-logo {
+  max-height: 120px;   /* increase from 80px to 120px */
+  max-width: 100%;     /* ensure it never overflows its column */
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+
+.sponsor-bar .logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 16px;
+  padding: 0 10px;
+  max-width: 100%;
+}
+
+.sponsor-bar img.sponsor-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  max-width: 100%;
+  flex-shrink: 1;
+}
+
+@media (max-width: 768px) {
+  .sponsor-bar .sponsor-logo {
+    max-height: 100px; /* a bit smaller on tablets */
+  }
+}
+
+/* Mobile: allow logos to shrink further */
+@media (max-width: 768px) {
+  .sponsor-bar img.sponsor-logo {
+    height: 80px;
+  }
+}
+/* Sponsor-row from previous site*/
+.sponsor-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    margin-top: 30px;
+    gap: 2rem; /* Add consistent gap between logos */
+  }
+
+  .sponsor-row a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    flex: 0 1 auto; /* Allow items to shrink but not grow */
+  }
+
+
+  .sponsor-row img {
+    max-height: 90px;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain; /* Ensure images maintain aspect ratio */
+  }
+
+  /* Specific styles for NSM and C-HUK logos */
+  .sponsor-row a[href*="nsmindia.in"] img {
+    max-height: 130px; /* Increased height specifically for NSM logo */
+  }
+  
+  .sponsor-row a[href*="c-huk"] img {
+    max-height: 120px; /* Keep C-HUK logo at previous size */
+  }
+
+  /* Mobile responsive styles */
+  @media (max-width: 768px) {
+    .sponsor-row {
+      padding: 1rem;
+      gap: 1.5rem; /* Slightly reduced gap for mobile */
+    }
+    
+    .sponsor-row a {
+      padding: 0.25rem;
+      width: 45%; /* Set width to allow 2 logos per row */
+      margin-bottom: 1rem;
+    }
+
+    .sponsor-row img {
+      max-height: 70px;
+    }
+
+    .sponsor-row a[href*="nsmindia.in"] img {
+      max-height: 90px; /* Adjusted for better mobile display */
+    }
+
+    .sponsor-row a[href*="c-huk"] img {
+      max-height: 80px;
+    }
+  }
+
+  /* Small mobile devices */
+  @media (max-width: 480px) {
+    .sponsor-row {
+      gap: 1rem;
+    }
+    
+    .sponsor-row a {
+      width: 90%; /* Stack logos vertically on very small screens */
+    }
+  }
+  
+  /*********/
+/* Content Sections */
+.content-section {
+  background: white;
+  padding: 40px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.7s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Expandable Sections */
+details {
+  margin: 10px 0;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #fafafa;
+}
+
+summary {
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1em;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+thead {
+  background-color: #004080;
+  color: white;
+}
+
+span {
+  color: red;
+  font-weight: bold;
+}
+
+/* Image fix for C-HUK */
+.c-huk-image {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Responsive Typography */
+
+.home-hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 6vw, 4rem); /* Mobile to desktop scaling */
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  word-break: break-word;
+}
+.home-hero h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.5rem, 5.5vw, 3.2rem);
+  font-weight: 600;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+
+
+
+.hero-home p {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  line-height: 1.6;
+  text-align: justify;
+  word-break: break-word;
+}
+  .hero-home {
+    min-height: 70vh;
+    padding-top: 80px;
+    background-position: center;
+    background-size: cover;
+  }
+
+  /* Hero Title Responsive Typography */
+.hero-home h1:first-of-type {
+  font-size: clamp(1.5rem, 5vw, 3.2rem); /* scales from mobile to desktop */
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  color: white;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+.hero-home h1:last-of-type {
+  font-size: clamp(1.2rem, 4vw, 2.5rem); /* scales slightly smaller */
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  color: white;
+  line-height: 1.2;
+  word-break: break-word;
+}
+.hero-home h5 {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  font-weight: 400;
+  color: white !important;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  margin: 0 auto;
+  word-break: break-word;
+  max-width: 90%;
+  line-height: 1.4;
+}
+
+.hero-home p {
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  font-weight: 300;
+  color: white !important;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  margin: 0 auto;
+  max-width: 90%;
+  line-height: 1.5;
+  word-break: break-word;
+}
+@media (max-width: 576px) {
+  .hero-home h1:first-of-type,
+  .hero-home h1:last-of-type {
+    text-align: center;
+    padding: 0 10px;
+  }
+}
+
+
+ 
+  .btn-custom {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .content-section {
+    padding: 20px;
+  }
+
+  .mega-menu {
+    width: 100%;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .event-info {
+    font-size: 1rem;
+  }
+
+  #about p {
+    text-align: justify;
+  }
+
+  .sponsor-bar img.sponsor-logo {
+    max-height: 60px;
+    max-width: 100px;
+    margin: 8px;
+  }
+}
+/* Universal Responsive Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4.5vw, 2.4rem);
+}
+
+h5 {
+  font-size: clamp(1rem, 3.5vw, 1.4rem);
+}
+
+p {
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  line-height: 1.6;
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+
+/* Under Construction */
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+
+.text-danger {
+  color: #d90429 !important;
+}
+
+@media (max-width: 576px) {
+  .content-section {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .text-center h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .home-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .home-hero h2 {
+    font-size: 1.2rem;
+  }
+
+  .event-line {
+    font-size: 1rem;
+  }
+
+  .sponsor-logo {
+    max-width: 70px;
+    margin: 8px;
+  }
+}
+/* Make the card header standout */
+.card-header {
+  background: linear-gradient(90deg, #ffc107, #e0a800);
+}
+
+/* Add a subtle background to even rows */
+.table-hover tbody tr:nth-of-type(even) {
+  background-color: #f9f9f9;
+}
+
+/* Increase spacing in table cells */
+.table td, .table th {
+  vertical-align: middle;
+  padding: 0.75rem 1rem;
+}
+
+/* Style the “Extended” badge */
+.badge.bg-danger {
+  font-size: 0.85rem;
+  padding: 0.35em 0.65em;
+}
+
+/* Make the strikethrough muted */
+s.text-muted {
+  color: #6c757d !important;
+}
+
+.hero-bg {
+  position: relative;
+  background-image: url('../assets/images/cfp.jpeg'); /* your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  /* ensure min-height if you want consistent height */
+  min-height: 40vh;
+}
+
+/* Dark overlay */
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+/* Keep your content above the overlay */
+.hero-bg .container {
+  position: relative;
+  z-index: 1;
+}

@@ -1,0 +1,50 @@
+
+.course-overview {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.overview-content {
+    line-height: 1.8;
+}
+
+.card {
+    transition: transform 0.3s ease-in-out;
+    border: none;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.list-group-item {
+    border: none;
+    padding: 1rem;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.list-group-item:before {
+    content: "•";
+    color: #007bff;
+    font-weight: bold;
+    position: absolute;
+    left: 0.5rem;
+}
+
+.btn-primary {
+    background: #1e90ff;
+    border: none;
+    box-shadow: 0 4px 15px rgba(30, 144, 255, 0.2);
+}
+
+.btn-primary:hover {
+    background: #007bff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(30, 144, 255, 0.3);
+}
