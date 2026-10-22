@@ -47,7 +47,7 @@
 <body>
 
   <!-- Skip Link for Keyboard & Screen Reader Users (GIGW 5.2.27) -->
-  <a href="#main" class="skip-link">Skip to main content</a>
+  <a href="#main" class="skip-link"><i class="bi bi-box-arrow-in-down" aria-hidden="true"></i> Skip to main content</a>
 
   <!-- ======= Header ======= -->
   <?php require __DIR__ . '/includes/header-home.php'; ?>

@@ -1,9 +1,8 @@
-<?php if (!defined('CHUK_PUBLIC_PAGE')) { http_response_code(404); exit; } ?><nav id="navbar" class="navbar" aria-label="Main Navigation" style="padding-top: 0%;">
+<?php if (!defined('CHUK_PUBLIC_PAGE')) { http_response_code(404); exit; } ?><nav id="navbar" class="navbar" aria-label="Main Navigation">
 
       <ul>
-
-        <li style="font-weight: bold; font-size: 25;"><a class="nav-link scrollto active" href="home.php">Home</a></li>
-        <li class="dropdown" style="font-weight: bold; font-size: 25;">
+        <li><a class="nav-link scrollto active" href="home.php">Home</a></li>
+        <li class="dropdown">
           <a href="#" class="nav-text" role="button" aria-expanded="false" aria-haspopup="true"><span>About</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a>
           <ul>
             <li><a href="#about">C-HUK</a></li>
@@ -13,7 +12,7 @@
             <li><a href="testimonials.php">Testimonials</a></li>
           </ul>
         </li>
-        <li class="dropdown" style="font-weight: bold; font-size: 25;">
+        <li class="dropdown">
           <a href="#services" class="nav-text" role="button" aria-expanded="false" aria-haspopup="true"><span>Resources</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a>
           <ul>
             <li><a href="#hero">HPCP</a></li>
@@ -22,23 +21,23 @@
             <li><a href="outreach_report.php">Reports</a></li>
           </ul>
         </li>
-        <li class="dropdown" style="font-weight: bold; font-size: 25;">
+        <li class="dropdown">
           <a href="#" class="nav-text" role="button" aria-expanded="false" aria-haspopup="true"><span>Event Calender</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a>
           <ul>
             <li><a href="#Eventcalender">Upcoming Events</a></li>
             <li><a href="#Eventcalender">Past Events</a></li>
           </ul>
         </li>
-        <li class="dropdown" style="font-weight: bold; font-size: 25;">
+        <li class="dropdown">
           <a href="#team" class="nav-text" role="button" aria-expanded="false" aria-haspopup="true"><span>News &amp; Events</span> <i class="bi bi-chevron-down" aria-hidden="true"></i></a>
           <ul>
             <li><a href="media.php">Media</a></li>
             <li><a href="gallery.php">Gallery</a></li>
           </ul>
         </li>
-        <li style="font-weight: bold; font-size: 25;"><a class="nav-link scrollto" href="#contact">Contact</a></li>
-        <li style="font-weight: bold; font-size: 25;"><a class="nav-link scrollto" href="/acts/industrial_visit_request">Industrial Visit</a></li>
-        <li style="font-weight: bold; font-size: 25;"><a class="nav-link scrollto" href="https://supercomputingindia.org" target="_blank" rel="noopener noreferrer">SCI2025 <span class="visually-hidden">(opens in new tab)</span></a></li>
+        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        <li><a class="nav-link scrollto" href="/acts/industrial_visit_request">Industrial Visit</a></li>
+        <li><a class="nav-link scrollto" href="https://supercomputingindia.org" target="_blank" rel="noopener noreferrer">SCI2025 <span class="visually-hidden">(opens in new tab)</span></a></li>
 
         <li class="login-button">
           <a class="getstarted scrollto" href="index.php">Login</a>

@@ -207,3 +207,39 @@ To inspect and test all changes on your local system:
 5. **Root Redirect**:  
    [http://127.0.0.1:8000/index.html](http://127.0.0.1:8000/index.html)  
    * Automatically redirects to `home.php`.
+
+---
+
+## 6. Phase 4 Enhancements: Fixed Header, Responsive Layout & Skip-Link Positioning
+
+### A. Root Causes Identified
+1. **"Skip to main content" Link stuck in corner & visible**:
+   * Previously, `.skip-link` had `position: absolute; top: 0; left: 15px;` on `:focus` or when active, appearing as a crude dark box stuck to the top-left corner, overlapping the page flow and breaking institutional design.
+2. **Fixed Navbar scrolling away on page scroll**:
+   * In `assets/css/style.css`, `#header` lacked an explicit `position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; z-index: 1030 !important;` rule, relying solely on Bootstrap utility classes which were overridden during page scroll.
+3. **Empty space above navbar on tablet and mobile viewports**:
+   * Conflicting rules in `index-1.css` (`flex-wrap: wrap; font-size: 25px;`) forced desktop navbar links to wrap into multiple rows on medium viewports (992px to 1200px), doubling header height and creating empty whitespace.
+   * On mobile, the hamburger menu toggle and the circular accessibility toggle were vertically misaligned.
+4. **Partner Logos (`NSM`, `C-HUK`, `C-DAC`, `MeitY`) cut off at the top**:
+   * `.logo-header` had a hardcoded `margin-top: 102px` on desktop and `96px` on mobile. When the fixed header expanded or when responsive breakpoints shifted, the header overlapped the top half of the logos.
+
+### B. Solutions Implemented
+1. **Redesigned & Centered Skip-to-Content Link**:
+   * **Location**: Horizontally centered (`left: 50% !important; transform: translateX(-50%) !important;`).
+   * **Off-Screen State**: `position: fixed !important; top: -120px !important; opacity: 0 !important; pointer-events: none !important;`. It occupies 0px layout space and is completely invisible during normal mouse/touch browsing.
+   * **Focused State**: Drops down smoothly to `top: 0 !important; opacity: 1 !important; pointer-events: auto !important;` when a user presses `Tab`.
+   * **Theme & Typography**: C-HUK deep navy gradient (`linear-gradient(135deg, #124265 0%, #1a4f78 100%)`), cyan border (`2px solid #2487ce; border-top: none;`), curved bottom corners (`border-radius: 0 0 10px 10px`), gold focus ring (`outline: 3px solid #ffc107`), and an accessible SVG icon (`<i class="bi bi-box-arrow-in-down"></i>`).
+2. **Robust Fixed-Top Header**:
+   * Enforced `position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; z-index: 1030 !important; background: #ffffff !important; padding: 8px 0 !important;` on `#header` in `assets/css/style.css`.
+   * Added dynamic elevation shadow (`box-shadow: 0 4px 16px rgba(18, 66, 101, 0.12)`) on scroll. The navbar remains firmly fixed at the top of the viewport at all times.
+3. **Responsive Single-Row Navbar & Alignment**:
+   * Set `flex-wrap: nowrap` on `.navbar ul` and removed all invalid inline `font-size: 25;` styles.
+   * Added dedicated medium-screen rules (`@media (max-width: 1200px) and (min-width: 992px)`) with compact padding (`padding: 8px 0 8px 11px !important; font-size: 13px !important;`) so all 9 menu items fit seamlessly on one single row without wrapping.
+   * Vertically centered the circular Accessibility button at `top: 8px` on desktop and `top: 7px` on mobile, aligning cleanly with the hamburger button.
+4. **Dynamic Responsive Logo Header (`.logo-header`)**:
+   * Recalculated `margin-top` to match the exact fixed header heights:
+     * **Desktop**: `margin-top: 58px !important;` (logos height 64px).
+     * **Tablet (<= 991px)**: `margin-top: 52px !important;` (logos height 46px).
+     * **Mobile (<= 576px)**: `margin-top: 50px !important;` (logos height 38px).
+   * 100% of all partner logos are now fully visible across all screen sizes with zero clipping.
+
