@@ -52,6 +52,55 @@
 }
 
     /* =========================================================
+       Floating Skip to Main Content Button (Placed to left of a11y icon)
+       ========================================================= */
+    #floatingSkipBtn,
+    .floating-skip-btn {
+        position: fixed !important;
+        top: 8px !important;
+        right: 66px !important;
+        height: 40px !important;
+        padding: 0 14px !important;
+        border-radius: 20px !important;
+        background: #ffffff !important;
+        border: 2px solid #124265 !important;
+        color: #124265 !important;
+        box-shadow: 0 3px 12px rgba(18, 66, 101, 0.18) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 6px !important;
+        cursor: pointer !important;
+        z-index: 10001 !important;
+        zoom: 1 !important;
+        font-size: 12.5px !important;
+        font-weight: 700 !important;
+        text-decoration: none !important;
+        line-height: 1 !important;
+        transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease, background-color 0.2s ease, color 0.2s ease !important;
+    }
+
+    #floatingSkipBtn:hover,
+    .floating-skip-btn:hover {
+        transform: scale(1.05) !important;
+        background: #124265 !important;
+        color: #ffffff !important;
+        box-shadow: 0 8px 24px rgba(18, 66, 101, 0.35) !important;
+    }
+
+    #floatingSkipBtn:focus-visible,
+    .floating-skip-btn:focus-visible {
+        outline: 3px solid #2487ce !important;
+        outline-offset: 3px !important;
+    }
+
+    #floatingSkipBtn i,
+    .floating-skip-btn i {
+        font-size: 15px !important;
+        line-height: 1 !important;
+    }
+
+    /* =========================================================
        Minimalist & Quirky Circular Accessibility Toggle Button
        ========================================================= */
     #accessibility-link,
@@ -321,18 +370,18 @@
         border-color: #1a5682 !important;
         color: #ffffff !important;
         transform: translateY(-1px) !important;
-        box-shadow: 0 4px 10px rgba(18, 66, 101, 0.22) !important;
+        box-shadow: none !important;
     }
 
     .accessibility-menu .a11y-btn:hover i {
         color: #ffffff !important;
     }
 
-    /* Selected / Active State - More Dark Color (#081d2d) with Professional Cyan Glowing Accent Border */
+    /* Selected / Active State - More Dark Color (#081d2d) with Professional Cyan Glowing Accent Border (No Heavy Shadow) */
     .accessibility-menu .a11y-btn.active {
         background: #081d2d !important;
         border: 2px solid #38bdf8 !important;
-        box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.45) !important;
+        box-shadow: none !important;
         color: #ffffff !important;
         font-weight: 700 !important;
     }
@@ -384,7 +433,7 @@
         border-color: #1a5682 !important;
         color: #ffffff !important;
         transform: translateY(-1px) !important;
-        box-shadow: 0 4px 10px rgba(18, 66, 101, 0.22) !important;
+        box-shadow: none !important;
     }
 
     .accessibility-menu .a11y-reset-all-btn:hover i {
@@ -493,6 +542,15 @@
 
     /* Responsive adjustments for mobile screen sizes */
     @media (max-width: 768px) {
+        #floatingSkipBtn,
+        .floating-skip-btn {
+            top: 7px !important;
+            right: 52px !important;
+            height: 36px !important;
+            padding: 0 10px !important;
+            font-size: 11.5px !important;
+        }
+
         #accessibility-link,
         button#accessibility-link,
         .accessibility-toggle-btn {
@@ -515,6 +573,21 @@
             right: 8px !important;
             width: calc(100vw - 16px) !important;
             max-width: 330px !important;
+        }
+    }
+
+    @media (max-width: 576px) {
+        #floatingSkipBtn span,
+        .floating-skip-btn span {
+            display: none !important;
+        }
+        #floatingSkipBtn,
+        .floating-skip-btn {
+            width: 36px !important;
+            min-width: 36px !important;
+            padding: 0 !important;
+            border-radius: 50% !important;
+            right: 52px !important;
         }
     }
 

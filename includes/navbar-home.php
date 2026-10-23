@@ -44,6 +44,12 @@
         </li>
       </ul>
 
+      <!-- Skip to Main Content Floating Shortcut (Outside card, left of accessibility icon) -->
+      <a href="#hero" id="floatingSkipBtn" class="floating-skip-btn" title="Skip navigation and jump to main content" aria-label="Skip to main content">
+          <i class="bi bi-box-arrow-in-down" aria-hidden="true"></i>
+          <span>Skip to Content</span>
+      </a>
+
       <button type="button" id="accessibility-link" class="accessibility-toggle-btn" aria-label="Open Accessibility Toolbox" aria-expanded="false" aria-controls="accessibility-menu" title="Accessibility Toolbox">
           <svg class="a11y-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <circle cx="12" cy="4.5" r="2.5" fill="currentColor"/>
@@ -69,13 +75,6 @@
           </div>
 
           <div class="a11y-body">
-              <div class="a11y-section">
-                  <span class="toolbox-subtitle"><i class="bi bi-compass" aria-hidden="true"></i> Navigation Shortcut</span>
-                  <button type="button" class="a11y-btn" id="toolboxSkipToMain" title="Skip navigation and jump directly to main content" style="width: 100%;">
-                      <i class="bi bi-box-arrow-in-down" aria-hidden="true"></i> Skip to Main Content
-                  </button>
-              </div>
-
               <div class="a11y-section">
                   <span class="toolbox-subtitle"><i class="bi bi-type" aria-hidden="true"></i> Text Size</span>
                   <div class="a11y-font-group">

@@ -307,3 +307,23 @@ To inspect and test all changes on your local system:
      * Guaranteed that `#accessibility-menu` and `#accessibility-link` remain firmly anchored at 1.0x without scaling.
 4. **Skip to Main Content Location & Visibility**:
    * Clarified that the "Skip to Main Content" button is positioned directly inside the Accessibility Card under Page Navigation so mouse users can trigger it with one click, while keyboard users retain the standard GIGW <kbd>Tab</kbd> offscreen banner. No skip controls are placed on the carousel.
+
+---
+
+## 10. Phase 8 Enhancements: Floating 'Skip to Content' Outside Card, Active Button Shadow Removal & Content Landmark Targeting
+
+### A. Root Causes & Enhancements
+1. **Floating 'Skip to Content' Button Outside the Card**:
+   * **Root Cause:** Having the skip-link inside the card required opening the accessibility toolbox first, which hindered quick mouse navigation.
+   * **Fix:** Moved the skip-to-content button outside the card directly to the left of the circular accessibility toggle button (`#floatingSkipBtn`).
+     * On desktop/tablet, it renders as a sleek pill (`height: 40px`, `padding: 0 14px`, `border: 2px solid #124265`, `[ ⤓ Skip to Content ]`).
+     * On mobile screens ($\le 576\text{px}$), it responsively collapses into a matching circular icon button (`36px` circle).
+     * Removed the shortcut row from inside the toolbox card body to keep the card compact.
+2. **Zero-Shadow Clean Styling for Active Card Buttons**:
+   * **Root Cause:** Active buttons had both a darker background and an outer glow shadow, which felt visually redundant.
+   * **Fix:** Removed all `box-shadow` declarations from `.a11y-btn.active`, `.a11y-btn:hover`, and `.a11y-reset-all-btn:hover`, relying exclusively on the distinct darker midnight navy (`#081d2d`) and crisp electric cyan border (`2px solid #38bdf8`) for active state recognition.
+3. **Content Landmark Resolution ("Top vs. Content")**:
+   * **Explanation:**
+     * **Back to Top (`[ ↑ ]`)**: Returns the user to the very top header of the webpage.
+     * **Skip to Main Content (WCAG 2.4.1 / GIGW 3.0)**: Intended to bypass/skip repetitive header elements (navigation bar, partner logos, and the large hero carousel) and jump directly into the first primary content landmark.
+   * **Fix:** Changed the jump target from `#main` (which starts before the logos and carousel) to `#hero` ("Upskilling Programmes" section). Clicking "Skip to Content" smoothly glides past the banner straight to the program cards and focuses `<h2>Upskilling Programmes</h2>`.

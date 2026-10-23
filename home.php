@@ -47,7 +47,7 @@
 <body>
 
   <!-- Skip Link for Keyboard & Screen Reader Users (GIGW 5.2.27) -->
-  <a href="#main" class="skip-link"><i class="bi bi-box-arrow-in-down" aria-hidden="true"></i> Skip to main content</a>
+  <a href="#hero" class="skip-link"><i class="bi bi-box-arrow-in-down" aria-hidden="true"></i> Skip to main content</a>
 
   <!-- ======= Header ======= -->
   <?php require __DIR__ . '/includes/header-home.php'; ?>
@@ -706,7 +706,7 @@
       document.addEventListener('click', function (event) {
         const target = event.target.closest(
           '#accessibility-link, #closeAccessibilityMenu, #increaseFontSize, #decreaseFontSize, #resetFontSize, ' +
-          '#zoomPageIn, #zoomPageOut, #zoomPageReset, #bigWhiteCursor, #bigBlackCursor, #resetSettings, #headerResetSettings, #toolboxSkipToMain, ' +
+          '#zoomPageIn, #zoomPageOut, #zoomPageReset, #bigWhiteCursor, #bigBlackCursor, #resetSettings, #headerResetSettings, #floatingSkipBtn, ' +
           '#uncoloredDisplay, #brightContrast, #reverseContrast, ' +
           '#underlineLinks, #underlineHeaders, #highlightImages'
         );
@@ -717,6 +717,23 @@
         event.stopPropagation();
 
         switch (target.id) {
+          case 'floatingSkipBtn': {
+            const heroSection = document.getElementById('hero');
+            if (heroSection) {
+              heroSection.scrollIntoView({ behavior: 'smooth' });
+              const heading = heroSection.querySelector('h2');
+              if (heading) {
+                heading.setAttribute('tabindex', '-1');
+                heading.focus();
+              }
+            }
+            const menu = document.getElementById('accessibility-menu');
+            if (menu && menu.classList.contains('show')) {
+              menu.classList.remove('show');
+              updateAria(false);
+            }
+            break;
+          }
           case 'accessibility-link': {
             const menu = document.getElementById('accessibility-menu');
             if (menu) {
@@ -736,18 +753,6 @@
               updateAria(false);
               const link = document.getElementById('accessibility-link');
               if (link) link.focus();
-            }
-            break;
-          }
-          case 'toolboxSkipToMain': {
-            const main = document.getElementById('main');
-            if (main) {
-              main.scrollIntoView({ behavior: 'smooth' });
-              const heading = main.querySelector('h1, h2');
-              if (heading) {
-                heading.setAttribute('tabindex', '-1');
-                heading.focus();
-              }
             }
             break;
           }
