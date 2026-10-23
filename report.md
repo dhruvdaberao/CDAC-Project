@@ -266,3 +266,23 @@ To inspect and test all changes on your local system:
 5. **Skip to Main Content Visibility**:
    * Clarified that by GIGW 5.2.27 standard, the skip link is an off-screen keyboard utility that drops down centered when pressing `Tab`.
    * In addition, added a direct **"Skip to Main Content"** button right inside the Accessibility Toolbox so mouse users can also trigger it anytime with one click.
+
+---
+
+## 8. Phase 6 Enhancements: Portal Login (`index.php`) Sticky Header, Minimalist Return Navigation & Responsive Viewport Adaptability
+
+### A. Root Causes & Enhancements
+1. **Sticky Top Header for Login Screen**:
+   * **Root Cause:** The `<header>` element in `index.php` was a plain block inside a flex column body without sticky or fixed positioning. On scroll or viewport resize, the header moved out of view or shifted awkwardly.
+   * **Fix:** Converted to `.login-header` with `position: sticky; top: 0; z-index: 1020; background: #ffffff; border-bottom: 1px solid #e2e8f0; box-shadow: 0 2px 10px rgba(18, 66, 101, 0.06);`. The header now remains firmly pinned to the top on all screen sizes.
+2. **Minimalist & Theme-Consistent "Back to Home" Navigation**:
+   * **Root Cause:** The previous button was using Bootstrap's default `.btn-outline-primary` with generic text and raw `&larr;`, clashing with C-HUK's navy aesthetic.
+   * **Fix:** Created a custom `.btn-back-home` matching the C-HUK theme palette (`#124265` navy, `#f8fafc` soft background, `#cbd5e1` hairline border, smooth hover color transition, and an interactive icon `<i class="bi bi-arrow-left"></i>`).
+3. **Responsive Vertical Flex Centering & Viewport Height Protection**:
+   * **Root Cause:** On laptops or shorter screen heights ($\le 750\text{px}$), the fixed margin `40px auto` and standard flex distribution pushed the bottom of the login card and the "Sign In" button below the viewport fold, creating unnecessary scrollbars.
+   * **Fix:** 
+     * Rebuilt `<main id="login-main">` into a flex-centered container (`flex-grow: 1; display: flex; align-items: center; justify-content: center;`).
+     * Added media query `@media (max-height: 750px)` that dynamically adjusts margins, paddings, logo heights, and subtitle spacing so the entire authentication form remains 100% visible without scrollbars.
+     * Added mobile media query `@media (max-width: 576px)` with responsive container widths (`max-width: 420px`), compact logo sizing, and adaptive touch-friendly button sizing.
+4. **Form Controls & Focus Accessibility**:
+   * Upgraded input styling with crisp `#cbd5e1` borders, standard `#1e293b` text color, and high-visibility `#2487ce` focus rings complying with GIGW 5.2.27 focus visibility.
