@@ -70,6 +70,13 @@
 
           <div class="a11y-body">
               <div class="a11y-section">
+                  <span class="toolbox-subtitle"><i class="bi bi-compass" aria-hidden="true"></i> Navigation Shortcut</span>
+                  <button type="button" class="a11y-btn" id="toolboxSkipToMain" title="Skip navigation and jump directly to main content" style="width: 100%;">
+                      <i class="bi bi-box-arrow-in-down" aria-hidden="true"></i> Skip to Main Content
+                  </button>
+              </div>
+
+              <div class="a11y-section">
                   <span class="toolbox-subtitle"><i class="bi bi-type" aria-hidden="true"></i> Text Size</span>
                   <div class="a11y-font-group">
                       <button type="button" class="a11y-btn" id="decreaseFontSize" aria-label="Decrease text size" title="Smaller font (-15%)">

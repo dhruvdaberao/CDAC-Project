@@ -243,3 +243,26 @@ To inspect and test all changes on your local system:
      * **Mobile (<= 576px)**: `margin-top: 50px !important;` (logos height 38px).
    * 100% of all partner logos are now fully visible across all screen sizes with zero clipping.
 
+
+---
+
+## 7. Phase 5 Enhancements: Carousel Controls, Minimalist UI & Card Zoom Isolation
+
+### A. Root Causes & Enhancements
+1. **Carousel Pause/Play Button Not Changing**:
+   * **Root Cause:** A duplicate event listener existed in both `home.php` and `assets/js/main.js`. Clicking the pause button caused both handlers to execute immediately one after the other, causing the second listener to immediately revert the state change.
+   * **Fix:** Removed the duplicate listener from `home.php` and made `main.js` the single source of truth with an initialization guard (`dataset.carouselInit`). Now clicking toggles seamlessly between Pause (`||` `bi-pause-fill`) and Play (`?` `bi-play-fill`), properly updating `aria-pressed`, `aria-label`, and `title`.
+2. **Carousel Arrows Redesign**:
+   * **Root Cause:** The default previous/next controls used unstyled, washed-out grey angle bracket lines (`<` and `>`) floating across slides.
+   * **Fix:** Upgraded to sleek circular badges (`rgba(18, 66, 101, 0.75)` dark navy, `2px solid rgba(255, 255, 255, 0.85)` white border, `border-radius: 50%`, `46px` diameter) centered vertically at `top: 50%` on both edges of the carousel with smooth hover elevation and scaling.
+3. **Accessibility Toolbox Card Minimalist Buttons**:
+   * **Root Cause:** Active buttons had thick dark borders (`2px solid #081d2d`), heavy inset shadows, and an artificial `?` checkmark glyph, making the UI look heavy and non-native.
+   * **Fix:** Replaced with a flat, minimalist, executive design matching the C-HUK theme:
+     * **Normal State:** Light slate background (`#f8fafc`), hairline border (`1px solid #e2e8f0`), zero drop shadows (`box-shadow: none`), clean typography.
+     * **Active State:** Solid C-HUK navy background (`#124265`), matching border (`1px solid #124265`), crisp white text and icon, zero inset shadows, no clunky checkmark glyphs.
+4. **Card Zoom Isolation**:
+   * **Root Cause:** Clicking "Zoom Page View" previously set `style.zoom` on `document.documentElement` (`<html>`), which scaled up the fixed Accessibility Toolbox card as well.
+   * **Fix:** Scoped zoom strictly to the content areas (`#main` and `#footer`), while explicitly locking `#accessibility-menu` and `#accessibility-link` to `1.0x` zoom (`zoom: 1 !important`). The card dimensions stay 100% stable at all zoom levels.
+5. **Skip to Main Content Visibility**:
+   * Clarified that by GIGW 5.2.27 standard, the skip link is an off-screen keyboard utility that drops down centered when pressing `Tab`.
+   * In addition, added a direct **"Skip to Main Content"** button right inside the Accessibility Toolbox so mouse users can also trigger it anytime with one click.

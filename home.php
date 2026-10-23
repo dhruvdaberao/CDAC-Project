@@ -659,6 +659,14 @@
         applyFontScale(0);
         currentZoomLevel = 1;
         document.documentElement.style.zoom = '';
+        const mainContent = document.getElementById('main');
+        const footerContent = document.getElementById('footer');
+        if (mainContent) mainContent.style.zoom = '';
+        if (footerContent) footerContent.style.zoom = '';
+        const menu = document.getElementById('accessibility-menu');
+        const link = document.getElementById('accessibility-link');
+        if (menu) menu.style.zoom = '';
+        if (link) link.style.zoom = '';
         bodyElement.classList.remove(
           'reverse-contrast', 'bright-contrast', 'uncolored-display',
           'underline-links', 'underline-headers', 'highlight-images',
@@ -677,7 +685,7 @@
       document.addEventListener('click', function (event) {
         const target = event.target.closest(
           '#accessibility-link, #closeAccessibilityMenu, #increaseFontSize, #decreaseFontSize, #resetFontSize, ' +
-          '#zoomPage, #bigWhiteCursor, #bigBlackCursor, #resetSettings, #headerResetSettings, ' +
+          '#zoomPage, #bigWhiteCursor, #bigBlackCursor, #resetSettings, #headerResetSettings, #toolboxSkipToMain, ' +
           '#uncoloredDisplay, #brightContrast, #reverseContrast, ' +
           '#underlineLinks, #underlineHeaders, #highlightImages'
         );
@@ -710,6 +718,18 @@
             }
             break;
           }
+          case 'toolboxSkipToMain': {
+            const main = document.getElementById('main');
+            if (main) {
+              main.scrollIntoView({ behavior: 'smooth' });
+              const heading = main.querySelector('h1, h2');
+              if (heading) {
+                heading.setAttribute('tabindex', '-1');
+                heading.focus();
+              }
+            }
+            break;
+          }
           case 'increaseFontSize':
             applyFontScale(fontScaleStep + 1);
             break;
@@ -719,11 +739,24 @@
           case 'resetFontSize':
             applyFontScale(0);
             break;
-          case 'zoomPage':
+          case 'zoomPage': {
             currentZoomLevel = currentZoomLevel >= 1.3 ? 1 : Math.round((currentZoomLevel + 0.1) * 10) / 10;
-            document.documentElement.style.zoom = currentZoomLevel === 1 ? '' : currentZoomLevel;
+            const zoomVal = currentZoomLevel === 1 ? '' : currentZoomLevel;
+            const mainContent = document.getElementById('main');
+            const footerContent = document.getElementById('footer');
+            if (mainContent) mainContent.style.zoom = zoomVal;
+            if (footerContent) footerContent.style.zoom = zoomVal;
+            document.documentElement.style.zoom = '';
+
+            // Keep the card and its toggle button strictly at 1.0x (never zoomed)
+            const menu = document.getElementById('accessibility-menu');
+            const link = document.getElementById('accessibility-link');
+            if (menu) menu.style.zoom = '1';
+            if (link) link.style.zoom = '1';
+
             target.classList.toggle('active', currentZoomLevel !== 1);
             break;
+          }
           case 'bigWhiteCursor': {
             bodyElement.classList.remove('big-black-cursor');
             const blackBtn = document.getElementById('bigBlackCursor');
@@ -813,50 +846,7 @@
     })();
   </script>
 
-  <!-- Carousel Timing & Pause Control Script (GIGW 5.2.25) -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const myCarousel = document.getElementById('carouselExampleAutoplaying');
-      const pauseBtn = document.getElementById('carouselPauseBtn');
-      if (myCarousel && window.bootstrap && window.bootstrap.Carousel) {
-        const carousel = bootstrap.Carousel.getOrCreateInstance(myCarousel, {
-          interval: 8000,
-          pause: 'hover'
-        });
 
-        // Check user motion preferences
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (prefersReducedMotion) {
-          carousel.pause();
-          if (pauseBtn) {
-            pauseBtn.setAttribute('aria-pressed', 'true');
-            pauseBtn.setAttribute('aria-label', 'Resume carousel autoplay');
-            const icon = pauseBtn.querySelector('i');
-            if (icon) icon.className = 'bi bi-play-fill';
-          }
-        }
-
-        if (pauseBtn) {
-          pauseBtn.addEventListener('click', function() {
-            const isPaused = pauseBtn.getAttribute('aria-pressed') === 'true';
-            if (isPaused) {
-              carousel.cycle();
-              pauseBtn.setAttribute('aria-pressed', 'false');
-              pauseBtn.setAttribute('aria-label', 'Pause carousel autoplay');
-              const icon = pauseBtn.querySelector('i');
-              if (icon) icon.className = 'bi bi-pause-fill';
-            } else {
-              carousel.pause();
-              pauseBtn.setAttribute('aria-pressed', 'true');
-              pauseBtn.setAttribute('aria-label', 'Resume carousel autoplay');
-              const icon = pauseBtn.querySelector('i');
-              if (icon) icon.className = 'bi bi-play-fill';
-            }
-          });
-        }
-      }
-    });
-  </script>
 
 </body>
 

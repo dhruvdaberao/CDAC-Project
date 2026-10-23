@@ -354,44 +354,68 @@
   /**
    * Accessible Carousel Autoplay Pause/Play Controller (GIGW 5.2.25 / WCAG 2.2.2)
    */
-  window.addEventListener('load', () => {
-    let carouselEl = document.getElementById('carouselExampleAutoplaying');
-    let pauseBtn = document.getElementById('carouselPauseBtn');
-    if (carouselEl && window.bootstrap && window.bootstrap.Carousel) {
-      let bsCarousel = bootstrap.Carousel.getOrCreateInstance(carouselEl);
+  const initCarouselController = () => {
+    const carouselEl = document.getElementById('carouselExampleAutoplaying');
+    const pauseBtn = document.getElementById('carouselPauseBtn');
+    if (!carouselEl || !pauseBtn || pauseBtn.dataset.carouselInit) return;
+    pauseBtn.dataset.carouselInit = 'true';
 
-      // Auto-pause if user prefers reduced motion
-      let prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (prefersReducedMotion) {
-        bsCarousel.pause();
-        if (pauseBtn) {
-          pauseBtn.setAttribute('aria-pressed', 'true');
-          pauseBtn.setAttribute('aria-label', 'Resume carousel autoplay');
-          let icon = pauseBtn.querySelector('i');
-          if (icon) icon.className = 'bi bi-play-fill';
-        }
-      }
-
-      if (pauseBtn) {
-        pauseBtn.addEventListener('click', function() {
-          let isPaused = pauseBtn.getAttribute('aria-pressed') === 'true';
-          if (isPaused) {
-            bsCarousel.cycle();
-            pauseBtn.setAttribute('aria-pressed', 'false');
-            pauseBtn.setAttribute('aria-label', 'Pause carousel autoplay');
-            let icon = pauseBtn.querySelector('i');
-            if (icon) icon.className = 'bi bi-pause-fill';
-          } else {
-            bsCarousel.pause();
-            pauseBtn.setAttribute('aria-pressed', 'true');
-            pauseBtn.setAttribute('aria-label', 'Resume carousel autoplay');
-            let icon = pauseBtn.querySelector('i');
-            if (icon) icon.className = 'bi bi-play-fill';
-          }
+    const getCarousel = () => {
+      if (window.bootstrap && window.bootstrap.Carousel) {
+        return bootstrap.Carousel.getOrCreateInstance(carouselEl, {
+          interval: 8000,
+          pause: 'hover'
         });
       }
+      return null;
+    };
+
+    let bsCarousel = getCarousel();
+
+    // Auto-pause if user prefers reduced motion
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      if (bsCarousel) bsCarousel.pause();
+      pauseBtn.setAttribute('aria-pressed', 'true');
+      pauseBtn.setAttribute('aria-label', 'Resume carousel autoplay');
+      pauseBtn.setAttribute('title', 'Play autoplay');
+      const icon = pauseBtn.querySelector('i');
+      if (icon) icon.className = 'bi bi-play-fill';
     }
-  });
+
+    pauseBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      bsCarousel = getCarousel();
+      const isCurrentlyPaused = pauseBtn.getAttribute('aria-pressed') === 'true';
+      const icon = pauseBtn.querySelector('i');
+
+      if (isCurrentlyPaused) {
+        // Resume autoplay
+        if (bsCarousel) bsCarousel.cycle();
+        else if (window.jQuery) $(carouselEl).carousel('cycle');
+        pauseBtn.setAttribute('aria-pressed', 'false');
+        pauseBtn.setAttribute('aria-label', 'Pause carousel autoplay');
+        pauseBtn.setAttribute('title', 'Pause autoplay');
+        if (icon) icon.className = 'bi bi-pause-fill';
+      } else {
+        // Pause autoplay
+        if (bsCarousel) bsCarousel.pause();
+        else if (window.jQuery) $(carouselEl).carousel('pause');
+        pauseBtn.setAttribute('aria-pressed', 'true');
+        pauseBtn.setAttribute('aria-label', 'Resume carousel autoplay');
+        pauseBtn.setAttribute('title', 'Play autoplay');
+        if (icon) icon.className = 'bi bi-play-fill';
+      }
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCarouselController);
+  } else {
+    initCarouselController();
+  }
+  window.addEventListener('load', initCarouselController);
 
   /**
    * Initiate Pure Counter 
