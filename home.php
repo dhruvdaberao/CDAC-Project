@@ -636,6 +636,32 @@
         if (menu) menu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
       };
 
+      const setZoomLevel = (lvl) => {
+        currentZoomLevel = Math.max(0.8, Math.min(1.5, Math.round(lvl * 10) / 10));
+        const zoomVal = currentZoomLevel === 1 ? '' : currentZoomLevel;
+        const mainContent = document.getElementById('main');
+        const footerContent = document.getElementById('footer');
+        if (mainContent) mainContent.style.zoom = zoomVal;
+        if (footerContent) footerContent.style.zoom = zoomVal;
+        document.documentElement.style.zoom = '';
+
+        // Keep the card and its toggle button strictly at 1.0x (never zoomed)
+        const menu = document.getElementById('accessibility-menu');
+        const link = document.getElementById('accessibility-link');
+        if (menu) menu.style.zoom = '1';
+        if (link) link.style.zoom = '1';
+
+        const pctEl = document.getElementById('zoomScalePct');
+        if (pctEl) pctEl.textContent = Math.round(currentZoomLevel * 100) + '%';
+
+        const inBtn = document.getElementById('zoomPageIn');
+        const outBtn = document.getElementById('zoomPageOut');
+        const rstBtn = document.getElementById('zoomPageReset');
+        if (rstBtn) rstBtn.classList.toggle('active', currentZoomLevel === 1);
+        if (inBtn) inBtn.classList.toggle('active', currentZoomLevel > 1);
+        if (outBtn) outBtn.classList.toggle('active', currentZoomLevel < 1);
+      };
+
       const applyFontScale = (step) => {
         fontScaleStep = Math.max(-1, Math.min(2, step));
         bodyElement.classList.remove('font-small', 'font-large', 'font-xlarge');
@@ -657,16 +683,7 @@
 
       const resetAllSettings = () => {
         applyFontScale(0);
-        currentZoomLevel = 1;
-        document.documentElement.style.zoom = '';
-        const mainContent = document.getElementById('main');
-        const footerContent = document.getElementById('footer');
-        if (mainContent) mainContent.style.zoom = '';
-        if (footerContent) footerContent.style.zoom = '';
-        const menu = document.getElementById('accessibility-menu');
-        const link = document.getElementById('accessibility-link');
-        if (menu) menu.style.zoom = '';
-        if (link) link.style.zoom = '';
+        setZoomLevel(1);
         bodyElement.classList.remove(
           'reverse-contrast', 'bright-contrast', 'uncolored-display',
           'underline-links', 'underline-headers', 'highlight-images',
@@ -680,12 +697,16 @@
         if (rstBtn) rstBtn.classList.add('active');
         const pctEl = document.getElementById('fontScalePct');
         if (pctEl) pctEl.textContent = '100%';
+        const zoomRstBtn = document.getElementById('zoomPageReset');
+        if (zoomRstBtn) zoomRstBtn.classList.add('active');
+        const zoomPctEl = document.getElementById('zoomScalePct');
+        if (zoomPctEl) zoomPctEl.textContent = '100%';
       };
 
       document.addEventListener('click', function (event) {
         const target = event.target.closest(
           '#accessibility-link, #closeAccessibilityMenu, #increaseFontSize, #decreaseFontSize, #resetFontSize, ' +
-          '#zoomPage, #bigWhiteCursor, #bigBlackCursor, #resetSettings, #headerResetSettings, #toolboxSkipToMain, ' +
+          '#zoomPageIn, #zoomPageOut, #zoomPageReset, #bigWhiteCursor, #bigBlackCursor, #resetSettings, #headerResetSettings, #toolboxSkipToMain, ' +
           '#uncoloredDisplay, #brightContrast, #reverseContrast, ' +
           '#underlineLinks, #underlineHeaders, #highlightImages'
         );
@@ -739,24 +760,15 @@
           case 'resetFontSize':
             applyFontScale(0);
             break;
-          case 'zoomPage': {
-            currentZoomLevel = currentZoomLevel >= 1.3 ? 1 : Math.round((currentZoomLevel + 0.1) * 10) / 10;
-            const zoomVal = currentZoomLevel === 1 ? '' : currentZoomLevel;
-            const mainContent = document.getElementById('main');
-            const footerContent = document.getElementById('footer');
-            if (mainContent) mainContent.style.zoom = zoomVal;
-            if (footerContent) footerContent.style.zoom = zoomVal;
-            document.documentElement.style.zoom = '';
-
-            // Keep the card and its toggle button strictly at 1.0x (never zoomed)
-            const menu = document.getElementById('accessibility-menu');
-            const link = document.getElementById('accessibility-link');
-            if (menu) menu.style.zoom = '1';
-            if (link) link.style.zoom = '1';
-
-            target.classList.toggle('active', currentZoomLevel !== 1);
+          case 'zoomPageIn':
+            setZoomLevel(currentZoomLevel + 0.1);
             break;
-          }
+          case 'zoomPageOut':
+            setZoomLevel(currentZoomLevel - 0.1);
+            break;
+          case 'zoomPageReset':
+            setZoomLevel(1);
+            break;
           case 'bigWhiteCursor': {
             bodyElement.classList.remove('big-black-cursor');
             const blackBtn = document.getElementById('bigBlackCursor');

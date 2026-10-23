@@ -122,7 +122,7 @@
               </div>
 
               <div class="a11y-section">
-                  <span class="toolbox-subtitle"><i class="bi bi-cursor" aria-hidden="true"></i> Cursor &amp; View</span>
+                  <span class="toolbox-subtitle"><i class="bi bi-cursor" aria-hidden="true"></i> Cursor</span>
                   <div class="a11y-grid-2">
                       <button type="button" class="a11y-btn" id="bigWhiteCursor" title="Large white cursor pointer">
                           <i class="bi bi-cursor-fill" aria-hidden="true"></i> White Cursor
@@ -130,8 +130,20 @@
                       <button type="button" class="a11y-btn" id="bigBlackCursor" title="Large black cursor pointer">
                           <i class="bi bi-cursor" aria-hidden="true"></i> Black Cursor
                       </button>
-                      <button type="button" class="a11y-btn a11y-col-span-2" id="zoomPage" title="Zoom page magnification">
-                          <i class="bi bi-zoom-in" aria-hidden="true"></i> Zoom Page View
+                  </div>
+              </div>
+
+              <div class="a11y-section">
+                  <span class="toolbox-subtitle"><i class="bi bi-aspect-ratio" aria-hidden="true"></i> Page Zoom</span>
+                  <div class="a11y-grid-2">
+                      <button type="button" class="a11y-btn" id="zoomPageIn" title="Zoom in page (+10%)">
+                          <i class="bi bi-zoom-in" aria-hidden="true"></i> Zoom In (+)
+                      </button>
+                      <button type="button" class="a11y-btn" id="zoomPageOut" title="Zoom out page (-10%)">
+                          <i class="bi bi-zoom-out" aria-hidden="true"></i> Zoom Out (-)
+                      </button>
+                      <button type="button" class="a11y-btn a11y-col-span-2 active" id="zoomPageReset" title="Reset page zoom to 100%">
+                          <i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Default Zoom (<span id="zoomScalePct">100%</span>)
                       </button>
                   </div>
               </div>

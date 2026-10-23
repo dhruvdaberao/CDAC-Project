@@ -286,3 +286,24 @@ To inspect and test all changes on your local system:
      * Added mobile media query `@media (max-width: 576px)` with responsive container widths (`max-width: 420px`), compact logo sizing, and adaptive touch-friendly button sizing.
 4. **Form Controls & Focus Accessibility**:
    * Upgraded input styling with crisp `#cbd5e1` borders, standard `#1e293b` text color, and high-visibility `#2487ce` focus rings complying with GIGW 5.2.27 focus visibility.
+
+---
+
+## 9. Phase 7 Enhancements: Solid Navy Blue Toolbox Buttons, Midnight Cyan Active Highlight & Complete Page Zoom Controls
+
+### A. Root Causes & Enhancements
+1. **Toolbox Buttons Styled Blue by Default**:
+   * **Root Cause:** Buttons previously defaulted to light slate (`#f8fafc`) with grey borders, which lacked visual identity and contrast against the white card background.
+   * **Fix:** Upgraded all `.a11y-btn`, `.btn-quick-reset`, and `.a11y-reset-all-btn` elements to use solid C-HUK navy blue (`#124265`) by default with clean white icons and text.
+2. **Professional Selected / Active State Highlighting**:
+   * **Root Cause:** Active states needed to be immediately distinct from the default blue buttons.
+   * **Fix:** Applied a deep midnight navy background (`#081d2d`), an electric cyan border (`2px solid #38bdf8`), a subtle cyan glow halo (`box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.45)`), and electric cyan icon accents.
+3. **Full Page Zoom Controller (Zoom In, Zoom Out & Reset)**:
+   * **Root Cause:** Previously there was only a single "Zoom Page View" button that cycled zoom in one direction.
+   * **Fix:** Replaced it with a full 3-button zoom control suite:
+     * **Zoom In (+)** (`#zoomPageIn`): Increments content zoom in steps of 10% (up to 150%).
+     * **Zoom Out (-)** (`#zoomPageOut`): Decrements content zoom in steps of 10% (down to 80%).
+     * **Default Zoom (100%)** (`#zoomPageReset`): Instantly restores content zoom to 100% and displays the live zoom level.
+     * Guaranteed that `#accessibility-menu` and `#accessibility-link` remain firmly anchored at 1.0x without scaling.
+4. **Skip to Main Content Location & Visibility**:
+   * Clarified that the "Skip to Main Content" button is positioned directly inside the Accessibility Card under Page Navigation so mouse users can trigger it with one click, while keyboard users retain the standard GIGW <kbd>Tab</kbd> offscreen banner. No skip controls are placed on the carousel.

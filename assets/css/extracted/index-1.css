@@ -192,24 +192,29 @@
     }
 
     .accessibility-menu .btn-quick-reset {
-        background: #edf2f7 !important;
-        border: 1px solid #cbd5e1 !important;
+        background: #124265 !important;
+        border: 1px solid #124265 !important;
         border-radius: 6px !important;
         font-size: 11px !important;
         font-weight: 600 !important;
-        color: #475569 !important;
-        padding: 3px 8px !important;
+        color: #ffffff !important;
+        padding: 4px 10px !important;
         cursor: pointer !important;
         display: inline-flex !important;
         align-items: center !important;
-        gap: 4px !important;
+        gap: 5px !important;
         transition: all 0.2s ease !important;
     }
 
+    .accessibility-menu .btn-quick-reset i {
+        color: #ffffff !important;
+        font-size: 11px !important;
+    }
+
     .accessibility-menu .btn-quick-reset:hover {
-        background: #fee2e2 !important;
-        border-color: #fca5a5 !important;
-        color: #b91c1c !important;
+        background: #1a5682 !important;
+        border-color: #1a5682 !important;
+        color: #ffffff !important;
     }
 
     .accessibility-menu .close-toolbox-btn {
@@ -261,7 +266,7 @@
 
     .accessibility-menu .toolbox-subtitle i {
         font-size: 11px !important;
-        color: #2487ce !important;
+        color: #124265 !important;
     }
 
     /* Button Layouts */
@@ -281,24 +286,24 @@
         grid-column: span 2 !important;
     }
 
-    /* Toolbox Buttons - Minimalist, Flat, Professional (Plain Theme Colors, No Unnecessary Shadows/Borders) */
+    /* Toolbox Buttons - By Default Solid Blue (#124265) Like the 100% Button */
     .accessibility-menu .a11y-btn {
         width: 100% !important;
         margin: 0 !important;
         padding: 8px 10px !important;
         font-size: 12px !important;
-        font-weight: 500 !important;
+        font-weight: 600 !important;
         line-height: 1.3 !important;
-        background: #f8fafc !important;
-        border: 1px solid #e2e8f0 !important;
+        background: #124265 !important;
+        border: 1px solid #124265 !important;
         border-radius: 6px !important;
-        color: #334155 !important;
+        color: #ffffff !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
         gap: 6px !important;
         cursor: pointer !important;
-        transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease !important;
+        transition: all 0.2s ease !important;
         box-shadow: none !important;
         position: relative !important;
         user-select: none !important;
@@ -306,40 +311,41 @@
 
     .accessibility-menu .a11y-btn i {
         font-size: 13px !important;
-        color: #2487ce !important;
+        color: #ffffff !important;
         display: inline-flex !important;
         align-items: center !important;
     }
 
     .accessibility-menu .a11y-btn:hover {
-        background: #f1f5f9 !important;
-        border-color: #cbd5e1 !important;
-        color: #124265 !important;
-        box-shadow: none !important;
+        background: #1a5682 !important;
+        border-color: #1a5682 !important;
+        color: #ffffff !important;
+        transform: translateY(-1px) !important;
+        box-shadow: 0 4px 10px rgba(18, 66, 101, 0.22) !important;
     }
 
     .accessibility-menu .a11y-btn:hover i {
-        color: #124265 !important;
+        color: #ffffff !important;
     }
 
-    /* Selected / Active State - Plain Solid Navy Matching Theme, No Heavy Borders, No Inset Shadows, No Pseudo checkmark */
+    /* Selected / Active State - More Dark Color (#081d2d) with Professional Cyan Glowing Accent Border */
     .accessibility-menu .a11y-btn.active {
-        background: #124265 !important;
-        border: 1px solid #124265 !important;
+        background: #081d2d !important;
+        border: 2px solid #38bdf8 !important;
+        box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.45) !important;
         color: #ffffff !important;
-        font-weight: 600 !important;
-        box-shadow: none !important;
+        font-weight: 700 !important;
     }
 
     .accessibility-menu .a11y-btn.active i {
-        color: #ffffff !important;
+        color: #38bdf8 !important;
     }
 
     .accessibility-menu .a11y-btn:focus-visible,
     .accessibility-menu .btn-quick-reset:focus-visible,
     .accessibility-menu .a11y-reset-all-btn:focus-visible,
     .accessibility-menu .close-toolbox-btn:focus-visible {
-        outline: 2px solid #2487ce !important;
+        outline: 2px solid #38bdf8 !important;
         outline-offset: 1px !important;
     }
 
@@ -352,35 +358,37 @@
 
     .accessibility-menu .a11y-reset-all-btn {
         width: 100% !important;
-        padding: 8px 12px !important;
-        font-size: 12px !important;
-        font-weight: 600 !important;
-        background: #f8fafc !important;
-        border: 1px solid #e2e8f0 !important;
+        padding: 9px 12px !important;
+        font-size: 12.5px !important;
+        font-weight: 700 !important;
+        background: #124265 !important;
+        border: 1px solid #124265 !important;
         border-radius: 6px !important;
-        color: #334155 !important;
+        color: #ffffff !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
         gap: 6px !important;
         cursor: pointer !important;
-        transition: all 0.15s ease !important;
+        transition: all 0.2s ease !important;
         box-shadow: none !important;
     }
 
     .accessibility-menu .a11y-reset-all-btn i {
         font-size: 13px !important;
-        color: #64748b !important;
+        color: #ffffff !important;
     }
 
     .accessibility-menu .a11y-reset-all-btn:hover {
-        background: #fee2e2 !important;
-        border-color: #ef4444 !important;
-        color: #b91c1c !important;
+        background: #1a5682 !important;
+        border-color: #1a5682 !important;
+        color: #ffffff !important;
+        transform: translateY(-1px) !important;
+        box-shadow: 0 4px 10px rgba(18, 66, 101, 0.22) !important;
     }
 
     .accessibility-menu .a11y-reset-all-btn:hover i {
-        color: #b91c1c !important;
+        color: #ffffff !important;
     }
 
     /* High contrast themes applied to content only (NEVER on body to preserve fixed viewport positioning) */
