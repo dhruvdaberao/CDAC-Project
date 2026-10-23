@@ -327,3 +327,16 @@ To inspect and test all changes on your local system:
      * **Back to Top (`[ ↑ ]`)**: Returns the user to the very top header of the webpage.
      * **Skip to Main Content (WCAG 2.4.1 / GIGW 3.0)**: Intended to bypass/skip repetitive header elements (navigation bar, partner logos, and the large hero carousel) and jump directly into the first primary content landmark.
    * **Fix:** Changed the jump target from `#main` (which starts before the logos and carousel) to `#hero` ("Upskilling Programmes" section). Clicking "Skip to Content" smoothly glides past the banner straight to the program cards and focuses `<h2>Upskilling Programmes</h2>`.
+
+---
+
+## 11. Phase 9 Enhancements: GIGW External Website Notification Modal, Visual External Link Indicators & Read-More Tooltips
+
+### A. Root Causes & Enhancements
+1. **Interactive GIGW External Website Confirmation Modal (GIGW 5.2.21 & 7.2.1)**:
+   * **Root Cause:** Screen-reader-only labels (`<span class="visually-hidden">(opens in new tab)</span>`) are silent to sighted users without assistive software. Furthermore, Indian Government guidelines require an explicit user prompt before departing to third-party domains.
+   * **Fix:** Implemented an accessible Bootstrap confirmation modal (`#externalLinkModal`) and automatic click interceptor for all external links (NSM, C-DAC, MeitY, SCI2025, social media). Clicking any external link pauses navigation and presents a clear notice showing the destination URL and disclaimer with "Continue" and "Cancel" buttons.
+2. **Visual External Link Indicator**:
+   * Appended the standard external link icon (`<i class="bi bi-box-arrow-up-right"></i>`) to external navigation links (e.g. `SCI2025`) so sighted users immediately recognize off-site links.
+3. **Read More Contextual Tooltips (WCAG 2.4.4)**:
+   * Added explicit `title="Read more about [Programme Name]"` tooltips to all programme card links. Sighted users now see a descriptive browser tooltip on hover without needing to inspect element or rely on screen readers.

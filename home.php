@@ -124,7 +124,7 @@
               <img src="assets/img/capacity.png" alt="" aria-hidden="true" style="max-width: 100%; height: auto; margin-bottom: 15px;">
               <h3 class="title" style="font-size: 18px; font-weight: 700; margin-bottom: 10px; text-transform: uppercase;"><a href="cbp.php">High Performance Computing Programmer</a></h3>
               <p class="description" style="text-align: justify; font-size: 14px; line-height: 24px;">The HPC's objective is to help graduates and interested candidates to enhance and upgrade their knowledge and abilities so that they become industry ready. The programme helps spread awareness of HPC and parallel programming, C, C++, Analytics &amp; Statistics using Python, OpenMP, MPI libraries, CUDA, OpenCL, OpenHPC
-                <a href="cbp.php" style="display: inline-block; margin-top: 10px; color: #007bff; text-decoration: none;">Read more <span class="visually-hidden">about High Performance Computing Programmer</span>...</a>
+                <a href="cbp.php" title="Read more about High Performance Computing Programmer" style="display: inline-block; margin-top: 10px; color: #007bff; text-decoration: none;">Read more <span class="visually-hidden">about High Performance Computing Programmer</span>...</a>
               </p>
             </div>
           </div>
@@ -135,7 +135,7 @@
               <img src="assets/img/facult1.png" alt="" aria-hidden="true" style="max-width: 100%; height: auto; margin-bottom: 15px;">
               <h3 class="title" style="font-size: 18px; font-weight: 700; margin-bottom: 10px; text-transform: uppercase;"><a href="fdp_public.php">Faculty Development Programme</a></h3>
               <p class="description" style="text-align: justify; font-size: 14px; line-height: 24px;">The objective of the FDP is to enhance and upgrade the knowledge and skills of the faculty members by creating awareness about HPC and related technologies and provide induction training. The selected members will gain the knowledge in the areas of HPC with applications in AI, Embedded and Cyber Security.
-                <a href="fdp_public.php" style="display: inline-block; margin-top: 10px; color: #007bff; text-decoration: none;">Read more <span class="visually-hidden">about Faculty Development Programme</span>...</a>
+                <a href="fdp_public.php" title="Read more about Faculty Development Programme" style="display: inline-block; margin-top: 10px; color: #007bff; text-decoration: none;">Read more <span class="visually-hidden">about Faculty Development Programme</span>...</a>
               </p>
             </div>
           </div>
@@ -146,7 +146,7 @@
               <img src="assets/img/blendLearn.png" alt="" aria-hidden="true" style="max-width: 100%; height: auto; margin-bottom: 15px;">
               <h3 class="title" style="font-size: 18px; font-weight: 700; margin-bottom: 10px; text-transform: uppercase;"><a href="blp.php">Blended Learning Programme</a></h3>
               <p class="description" style="text-align: justify; font-size: 14px; line-height: 24px;">The BLP objective is to help young people to enhance and upgrade their knowledge and abilities so they may become competitive. The programme helps spread awareness of HPC and parallel programming. With in-depth knowledge of big data analytics, cyber security threats
-                <a href="blp.php" style="display: inline-block; margin-top: 10px; color: #007bff; text-decoration: none;">Read more <span class="visually-hidden">about Blended Learning Programme</span>...</a>
+                <a href="blp.php" title="Read more about Blended Learning Programme" style="display: inline-block; margin-top: 10px; color: #007bff; text-decoration: none;">Read more <span class="visually-hidden">about Blended Learning Programme</span>...</a>
               </p>
             </div>
           </div>
@@ -160,7 +160,7 @@
               <img src="assets/img/master_trainer.png" alt="" aria-hidden="true" style="max-width: 100%; height: auto; margin-bottom: 15px;">
               <h3 class="title" style="font-size: 18px; font-weight: 700; margin-bottom: 10px; text-transform: uppercase;"><a href="mtp.php">AICTE Master Trainer Programme</a></h3>
               <p class="description" style="text-align: justify; font-size: 14px; line-height: 24px;">Master Trainer Programme in High-Performance Computing (HPC) is an advanced training initiative aimed at developing expertise in the use and teaching of HPC technologies. These programmes are often designed to enhance the capabilities of professionals and educators in various scientific, engineering
-                <a href="mtp.php" style="display: inline-block; margin-top: 10px; color: #007bff; text-decoration: none;">Read more <span class="visually-hidden">about AICTE Master Trainer Programme</span>...</a>
+                <a href="mtp.php" title="Read more about AICTE Master Trainer Programme" style="display: inline-block; margin-top: 10px; color: #007bff; text-decoration: none;">Read more <span class="visually-hidden">about AICTE Master Trainer Programme</span>...</a>
               </p>
             </div>
           </div>
@@ -171,7 +171,7 @@
               <img src="assets/img/capacity.png" alt="" aria-hidden="true" style="max-width: 100%; height: auto; margin-bottom: 15px;">
               <h3 class="title" style="font-size: 18px; font-weight: 700; margin-bottom: 10px; text-transform: uppercase;"><a href="Course_page.php">Experiential Learning</a></h3>
               <p class="description" style="text-align: justify; font-size: 14px; line-height: 24px;">Experiential Learning in High-Performance Computing (HPC) is an advanced training initiative aimed at developing expertise in the use and teaching of HPC technologies. This specialized program aims to produce trainers who can effectively educate and train others in various aspects of HPC
-                <a href="Course_page.php" style="display: inline-block; margin-top: 10px; color: #007bff; text-decoration: none;">Read more <span class="visually-hidden">about Experiential Learning</span>...</a>
+                <a href="Course_page.php" title="Read more about Experiential Learning" style="display: inline-block; margin-top: 10px; color: #007bff; text-decoration: none;">Read more <span class="visually-hidden">about Experiential Learning</span>...</a>
               </p>
             </div>
           </div>
@@ -863,7 +863,85 @@
     })();
   </script>
 
+  <!-- ======= GIGW External Link Confirmation Modal (GIGW 5.2.21 / 7.2.1) ======= -->
+  <div class="modal fade" id="externalLinkModal" tabindex="-1" aria-labelledby="externalLinkModalLabel" aria-hidden="true" style="z-index: 10005;">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="border-radius: 12px; border: 1px solid #cbd5e1; box-shadow: 0 12px 36px rgba(18, 66, 101, 0.22);">
+        <div class="modal-header" style="background: #124265; color: #ffffff; border-radius: 11px 11px 0 0; padding: 14px 20px;">
+          <h5 class="modal-title d-flex align-items-center gap-2" id="externalLinkModalLabel" style="font-size: 16px; font-weight: 700;">
+            <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> External Website Notification
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close dialog"></button>
+        </div>
+        <div class="modal-body" style="padding: 20px; font-size: 14px; color: #334155; line-height: 1.6;">
+          <p class="mb-2">You are being redirected to an external website:</p>
+          <div class="p-2 mb-3 bg-light rounded text-break fw-bold" id="externalLinkUrl" style="color: #124265; font-size: 13.5px; border: 1px solid #e2e8f0;"></div>
+          <p class="mb-0 text-muted small" style="line-height: 1.5;">
+            <i class="bi bi-shield-exclamation text-warning me-1"></i>
+            Please note that C-HUK / C-DAC is not responsible for the contents, privacy policies, or accessibility of external websites.
+          </p>
+        </div>
+        <div class="modal-footer" style="background: #f8fafc; border-top: 1px solid #e2e8f0; border-radius: 0 0 11px 11px; padding: 12px 20px;">
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal" style="font-weight: 600; padding: 6px 16px;">Cancel</button>
+          <a href="#" id="externalLinkConfirmBtn" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="background: #124265; border-color: #124265; font-weight: 600; padding: 6px 16px;">
+            Continue to External Site <i class="bi bi-arrow-right ms-1"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <script>
+    // GIGW External Link Interceptor (GIGW 5.2.21 / 7.2.1)
+    (function() {
+      document.addEventListener('click', function(e) {
+        const extLink = e.target.closest('a[href^="http://"], a[href^="https://"]');
+        if (!extLink) return;
+
+        // Skip internal/same-origin links or local dev server
+        try {
+          const targetUrl = new URL(extLink.href, window.location.href);
+          if (targetUrl.hostname === window.location.hostname || targetUrl.hostname === '127.0.0.1' || targetUrl.hostname === 'localhost') {
+            return;
+          }
+
+          // Show confirmation modal for external destinations
+          e.preventDefault();
+          const modalEl = document.getElementById('externalLinkModal');
+          const urlEl = document.getElementById('externalLinkUrl');
+          const confirmBtn = document.getElementById('externalLinkConfirmBtn');
+
+          if (modalEl && urlEl && confirmBtn) {
+            urlEl.textContent = extLink.href;
+            confirmBtn.href = extLink.href;
+
+            if (typeof bootstrap !== 'undefined' && bootstrap.Modal) {
+              const bsModal = bootstrap.Modal.getOrCreateInstance(modalEl);
+              bsModal.show();
+            } else {
+              if (confirm('External Website Notice:\n\nYou are being redirected to:\n' + extLink.href + '\n\nC-HUK is not responsible for external website contents. Do you wish to continue?')) {
+                window.open(extLink.href, '_blank', 'noopener,noreferrer');
+              }
+            }
+          }
+        } catch (err) {
+          // If URL parsing fails, proceed normally
+        }
+      });
+
+      // Dismiss modal when confirmation button is clicked
+      const confirmBtn = document.getElementById('externalLinkConfirmBtn');
+      if (confirmBtn) {
+        confirmBtn.addEventListener('click', function() {
+          const modalEl = document.getElementById('externalLinkModal');
+          if (modalEl && typeof bootstrap !== 'undefined' && bootstrap.Modal) {
+            const bsModal = bootstrap.Modal.getInstance(modalEl);
+            if (bsModal) bsModal.hide();
+          }
+        });
+      }
+    })();
+  </script>
 
 </body>
 

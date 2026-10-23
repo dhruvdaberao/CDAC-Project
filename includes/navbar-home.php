@@ -37,7 +37,7 @@
         </li>
         <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         <li><a class="nav-link scrollto" href="/acts/industrial_visit_request">Industrial Visit</a></li>
-        <li><a class="nav-link scrollto" href="https://supercomputingindia.org" target="_blank" rel="noopener noreferrer">SCI2025 <span class="visually-hidden">(opens in new tab)</span></a></li>
+        <li><a class="nav-link scrollto" href="https://supercomputingindia.org" target="_blank" rel="noopener noreferrer">SCI2025 <i class="bi bi-box-arrow-up-right ms-1" style="font-size: 11px;" aria-hidden="true"></i> <span class="visually-hidden">(opens in new tab)</span></a></li>
 
         <li class="login-button">
           <a class="getstarted scrollto" href="index.php">Login</a>
